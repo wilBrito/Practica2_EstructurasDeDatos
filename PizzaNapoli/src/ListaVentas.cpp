@@ -12,7 +12,7 @@ ListaVentas::ListaVentas()
 }
 
 //lONGITUD LISTA
-int ListaVentas::longuitudListaVentas()
+int ListaVentas::LonguitudListaVentas()
 {
     int cont=1;
     pnodo aux = cabeza;
@@ -24,10 +24,10 @@ int ListaVentas::longuitudListaVentas()
     return cont;
 }
 
-void ListaVentas::insertarNodoVenta(Venta v) {
+void ListaVentas::InsertarNodoVenta(Venta v) {
     pnodo aux;
 
-    if (listaVentasVacia())
+    if (ListaVentasVacia())
     {
         cabeza = new NodoVenta(v, NULL);
         final=cabeza;
@@ -42,7 +42,7 @@ void ListaVentas::insertarNodoVenta(Venta v) {
 
 
 //BORRAR NODOVENTA BUSCADO POR MEDIO DEL ID_VENTA
-void ListaVentas::borrarNodoVenta(Venta v) {
+void ListaVentas::BorrarNodoVenta(Venta v) {
     pnodo anterior;
 
     actual = cabeza;
@@ -70,27 +70,27 @@ void ListaVentas::borrarNodoVenta(Venta v) {
 }
 
 
-bool ListaVentas::listaVentasVacia(){
+bool ListaVentas::ListaVentasVacia(){
     return cabeza == NULL;
 }
 
 
 //PONE EL PUNTERO DONDE ESTE O SI ESTA ELIMINADO, LO INICIALIZA CON VALOR CABEZA
-void ListaVentas::esCabeza()
+void ListaVentas::EsCabeza()
 {
     actual = cabeza;
 }
 
 //PONE EL PUNTERO ACTUAL EN EL FINAL
-void ListaVentas::esFinal()
+void ListaVentas::EsFinal()
 {
-    esCabeza();
-    if(!listaVentasVacia())
+    EsCabeza();
+    if(!ListaVentasVacia())
         while(actual->siguiente)
-            esSiguiente();
+            EsSiguiente();
 }
 
-void ListaVentas::esSiguiente()
+void ListaVentas::EsSiguiente()
 {
     if(actual){
         actual = actual->siguiente;
@@ -98,19 +98,19 @@ void ListaVentas::esSiguiente()
 }
 
 //?????????
-bool ListaVentas::esActual()
+bool ListaVentas::EsActual()
 {
     return actual != NULL;
 }
 
 
-Venta ListaVentas::valorActual()
+Venta ListaVentas::ValorActual()
 {
     return actual->valor;
 }
 
 
-void ListaVentas::recorrerListaVentas()
+void ListaVentas::RecorrerListaVentas()
 {
     pnodo aux;
     aux = cabeza;
@@ -124,37 +124,37 @@ void ListaVentas::recorrerListaVentas()
 }
 
 
-void ListaVentas::insertarNodoVentaIntermedio(Venta v, int p)
+void ListaVentas::InsertarNodoVentaIntermedio(Venta v, int p)
 {
     //Me aseguro que exista el nodo
-    if(longuitudListaVentas() < p || p < 1 ){
+    if(LonguitudListaVentas() < p || p < 1 ){
         cout<<"Error, No existe posi del nodo";
     }
     else{
 
         if(p==1){
-            insertarNodoVentaIzq(v);
+            InsertarNodoVentaIzq(v);
         }
         else{
             pnodo aux = new NodoVenta(v, NULL);
-            esCabeza();//Actualizo actual a cabeza
+            EsCabeza();//Actualizo actual a cabeza
 
 
             //p-1 para que se me quede en un nodo antes
             while (p-1 > 1){
-                esSiguiente();//Va avanzado el actual
+                EsSiguiente();//Va avanzado el actual
                 p--;
             }
             //Cuando llega al nodo indicado sale del bucle
             aux->siguiente = actual->siguiente;
             actual->siguiente = aux;
 
-            esCabeza();
+            EsCabeza();
         }
     }
 }
 
-void ListaVentas::insertarNodoVentaIzq(Venta v)
+void ListaVentas::InsertarNodoVentaIzq(Venta v)
 {
     pnodo aux = new NodoVenta(v, NULL);
     aux->siguiente = cabeza;

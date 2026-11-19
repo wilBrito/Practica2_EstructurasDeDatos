@@ -31,21 +31,21 @@ class ListaVentas
 
     public:
         ListaVentas();
-        void insertarNodoVenta(Venta v);
+        void InsertarNodoVenta(Venta v);
 
-        void borrarNodoVenta(Venta v);
-        bool listaVentasVacia();
-        void esCabeza();
+        void BorrarNodoVenta(Venta v);
+        bool ListaVentasVacia();
+        void EsCabeza();
 
-        void esFinal();
-        void esSiguiente();
-        bool esActual();
-        Venta valorActual();
-        void recorrerListaVentas();
+        void EsFinal();
+        void EsSiguiente();
+        bool EsActual();
+        Venta ValorActual();
+        void RecorrerListaVentas();
 
-        int longuitudListaVentas();
-        void insertarNodoVentaIntermedio(Venta v, int p);
-        void insertarNodoVentaIzq(Venta v);
+        int LonguitudListaVentas();
+        void InsertarNodoVentaIntermedio(Venta v, int p);
+        void InsertarNodoVentaIzq(Venta v);
 };
 
 #endif // LISTAVENTAS_H
