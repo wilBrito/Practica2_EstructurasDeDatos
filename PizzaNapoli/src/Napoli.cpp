@@ -1,11 +1,10 @@
 #include "Napoli.h"
+#include<ABBCentros.h>
+using namespace std;
 
 Napoli::Napoli()
 {
-    //ctor
+
 }
 
-Napoli::~Napoli()
-{
-    //dtor
-}
+

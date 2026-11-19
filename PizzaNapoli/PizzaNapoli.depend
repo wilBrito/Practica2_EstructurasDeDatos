@@ -1,0 +1,42 @@
+# depslib dependency file v1.0
+1795128476 source:c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\main.cpp
+	<iostream>
+	<stdlib.h>
+	<Napoli.h>
+
+1795128916 c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\include\napoli.h
+	<ABBCentros.h>
+	<string>
+	<iostream>
+
+1795126395 c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\include\abbcentros.h
+	<Centro.h>
+	<iostream>
+
+1795125916 c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\include\centro.h
+	<ListaVentas.h>
+	<string>
+	<iostream>
+
+1795124826 c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\include\listaventas.h
+	<Venta.h>
+	<iostream>
+
+1795122663 c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\include\venta.h
+	<string>
+
+1795126637 source:c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\src\abbcentros.cpp
+	"ABBCentros.h"
+	<Centro.h>
+	<ListaVentas.h>
+
+1795126731 source:c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\src\listaventas.cpp
+	"ListaVentas.h"
+	"Venta.h"
+	<stdlib.h>
+	<iostream>
+
+1795129091 source:c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\src\napoli.cpp
+	"Napoli.h"
+	<ABBCentros.h>
+
