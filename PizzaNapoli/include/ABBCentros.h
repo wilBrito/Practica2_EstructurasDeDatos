@@ -57,6 +57,10 @@ class ABBCentros
         void PreOrden(void (*func)(Centro&), NodoABBCentro *nodo=NULL, bool r=true);
         void PostOrden(void (*func)(Centro&), NodoABBCentro *nodo=NULL, bool r=true);
 
+
+        //Insertamos ventas en los centros del arbol
+        void InsertarVentaEnCentro(Venta v);
+
     private:
         // Funciones auxiliares
         void Podar(NodoABBCentro* &);

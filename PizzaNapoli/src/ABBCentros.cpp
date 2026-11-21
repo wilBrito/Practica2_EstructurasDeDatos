@@ -235,3 +235,45 @@ void Mostrar(int &d)
 {
    cout << d << ",";
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void ABBCentros::InsertarVentaEnCentro(Venta v)
+{
+
+    //Creamos Nodo auxiliar apuntando a la raiz
+    NodoABBCentro *aux = raiz;
+
+
+    //Vamos a recorrer el arbol binario, sabiendo que lo hemos creado con id_centro distinto con valor numerico, ordenado
+    while(aux != nullptr){
+        //Distinguimos caso que hemos encontrado el id
+        if(aux->dato.id_centro == v.id_centro){
+            //Insertamos valor en la lista del centro correspondiente
+            aux->dato.listaDeVentasCentro.InsertarNodoVenta(v);
+        }
+
+        //Como esta ordenado vemos es mayor el nodo del arbol, es decir el id_centro del arbol que de la venta
+        else if(aux->dato.id_centro > v.id_centro){
+            //Vamos por la izq
+            aux = aux->izquierdo;
+        }
+
+        //Es mayor
+        else{
+           //Vamos por la derecha
+           aux = aux->derecho;
+        }
+    }
+}
