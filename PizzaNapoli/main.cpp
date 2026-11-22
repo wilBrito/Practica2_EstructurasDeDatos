@@ -38,6 +38,12 @@ int main()
     Napoli pizzeriaNapoli;
 
     cout<<"Pizzeria Napoli"<<endl;
+    cout<<"Generando 10 centos..."<<endl;
+    pizzeriaNapoli.generarNcentros();
+    cout<<"Centros generandos correctamente"<<endl;
+    cout<<"Generando 30 ventas..."<<endl;
+    pizzeriaNapoli.generarNventas();
+    cout<<"Ventas generandas correctamente"<<endl;
     int n;
     do{
         n = menu();

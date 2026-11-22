@@ -1,10 +1,10 @@
 #include "ABBCentros.h"
+#include "Venta.h"
 #include <Centro.h>
 #include <ListaVentas.h>
-
+#include <ctime>
+#include <stdlib.h>
 using namespace std;
-
-
 //Árbol vacío
 bool ABBCentros::Vacio(NodoABBCentro *r)
 {
@@ -170,7 +170,18 @@ bool ABBCentros::Buscar(const Centro dat)
    }
    return false; // No está en árbol
 }
-
+// Buscar un id en el árbol
+bool ABBCentros::BuscarId(int id)
+{
+   actual = raiz;
+   // Todavía puede aparecer, ya que quedan nodos por mirar
+   while(!Vacio(actual)) {
+      if(id== actual->dato.id_centro) return true;
+      else if(id > actual->dato.id_centro) actual = actual->derecho; // Seguir
+      else if(id < actual->dato.id_centro) actual = actual->izquierdo;
+   }
+   return false; // No está en árbol
+}
 // Calcular la altura del nodo que contiene el int dat
 int  ABBCentros::Altura(const Centro dat)
 {
@@ -201,7 +212,7 @@ const int  ABBCentros::NumeroNodos()
 // Función auxiliar para contar nodos. Función recursiva de recorrido en
 //   preorden, el proceso es aumentar el contador
 void  ABBCentros::auxContador(NodoABBCentro *nodo)
-{
+{   if(nodo==NULL) return;
    contador++;  // Otro nodo
    // Continuar recorrido
    if(nodo->izquierdo) auxContador(nodo->izquierdo);
@@ -229,6 +240,54 @@ void  ABBCentros::auxAltura(NodoABBCentro *nodo, int a)
    // árbol, actualizamos la altura actual del árbol
    if(EsHoja(nodo) && a > altura) altura = a;
 }
+int ABBCentros::centro_aleatorio(){
+    actual=raiz;
+    while(!Vacio(actual)){
+        int mover=rand()%3;
+        if(mover=0){
+            return actual->dato.id_centro;
+        }
+        //1 ir a los nodos a la izquierda
+        else if(mover=1){
+            //si esta vacio devolvemos el actual
+            if(Vacio(actual->izquierdo)){
+                return actual->dato.id_centro;}
+            else{
+                actual=actual->izquierdo;
+            }
+        }
+        //2 ir a los nodos a la derecha
+        else{
+            //si esta vacio devolvemos el actual
+            if(Vacio(actual->derecho)){
+                return actual->dato.id_centro;}
+            else{
+                actual=actual->derecho;
+            }
+        }
+    }
+}
+void ABBCentros::insertar_venta(Venta v){
+    actual=raiz;
+    bool encontrado=false;
+    while(!Vacio(actual)&& !encontrado){
+        //si es el centro, se inserta en la lista
+        if(v.id_centro==actual->dato.id_centro){
+            actual->dato.listaDeVentasCentro.InsertarNodoVenta(v);
+            encontrado=true;
+        }
+        //si el id del centro es menor que el actual, se mira en el nodo izquierdo.
+        else if(v.id_centro<actual->dato.id_centro){
+            actual=actual->izquierdo;
+        }
+        //si el id del centro es mayor que el actual, se mira en el nodo derecho.
+        else if(v.id_centro>actual->dato.id_centro){
+            actual=actual->derecho;
+        }
+    }
+    if(!encontrado){
+        cout<<"Centro no encontrado"<<endl;
+    }}
 
 // Función de prueba para recorridos del árbol
 void Mostrar(int &d)
