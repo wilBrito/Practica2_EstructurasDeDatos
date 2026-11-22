@@ -1,8 +1,10 @@
 #include <iostream>
-
+#include "ABBCentros.h"
+#include "Napoli.h"
 #include <stdlib.h>
 #include<Napoli.h>
-
+#include <cstdlib>  //las dos ultimas para srand(time(NULL)) para que sea aleatorio
+#include <ctime>
 using namespace std;
 
 int menu(){
@@ -36,20 +38,53 @@ int menu(){
 int main()
 {
     Napoli pizzeriaNapoli;
-
+    srand(time(NULL));
     cout<<"Pizzeria Napoli"<<endl;
     cout<<"Generando 10 centos..."<<endl;
     pizzeriaNapoli.generarNcentros();
     cout<<"Centros generandos correctamente"<<endl;
+    cout<<"Arbol inicial:"<<endl;
+    pizzeriaNapoli.mostrarCentros();
     cout<<"Generando 30 ventas..."<<endl;
     pizzeriaNapoli.generarNventas();
     cout<<"Ventas generandas correctamente"<<endl;
+    cout<<"Centros tras la insercion de ventas:"<<endl;
+    pizzeriaNapoli.mostrarCentros();
     int n;
     do{
         n = menu();
 
         switch(n){
-            case 1:
+            case 1:{
+                int id=1000;
+                int loc;
+                bool locval=false;
+                char valid;
+                while(!(id>=0&&id<1000)){
+                cout<<"inserte el ID del nuevo centro"<<endl;
+                cin>>id;
+                if(id<0||id>999){
+                    cout<<"id no valido"<<endl;
+                }}
+                while(!locval){
+                cout<<"inserte la ubicación del nuevo centro (0-20)"<<endl;
+                cin>>loc;
+                if(id<0||id>20){
+                    cout<<"id no valido"<<endl;
+                }
+                else{
+                    cout<<"localidad: ";
+                    cout<<localidades[loc]<<endl;
+                    cout<<"Deseas esa localidad Y/N?"<<endl;
+                    cin>>valid;
+                    if(valid=='Y'){
+                        locval=true;
+                    }
+                }}
+                Centro cent={id,localidades[loc],ListaVentas()};
+                pizzeriaNapoli.InsertarCentro(cent);
+                pizzeriaNapoli.mostrarCentros();//PRUEBA
+                }
                 break;
             case 2:
                 break;

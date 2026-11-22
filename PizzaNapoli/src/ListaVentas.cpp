@@ -2,7 +2,7 @@
 #include "Venta.h"
 #include <stdlib.h>
 #include <iostream>
-
+#include <iomanip>
 using namespace std;
 
 //LISTA VACIA
@@ -14,13 +14,12 @@ ListaVentas::ListaVentas()
 //lONGITUD LISTA
 int ListaVentas::LonguitudListaVentas()
 {
-    int cont=1;
+    int cont=0;
     pnodo aux = cabeza;
-    while(aux->siguiente != NULL){
+    while(aux != NULL){
         cont++;
         aux = aux->siguiente;
     }
-    delete aux;
     return cont;
 }
 
@@ -161,7 +160,18 @@ void ListaVentas::InsertarNodoVentaIzq(Venta v)
     cabeza = aux;
 
 }
-
+void ListaVentas::MostrarVentas(){
+    pnodo aux;
+    aux = cabeza;
+    cout <<left<<setw(10)<<"ID CENTRO"<<setw(10)<<"ID VENTA"<<setw(10)<<"COD PIZZA"<<setw(20)<<"CATEGORIA"<<setw(10)<<"UNIDADES"<<setw(10)<<"FECHA"<<endl;
+    while(aux)
+    {
+        cout <<left<<setw(10)<<aux->valor.id_centro<<setw(10)<<aux->valor.id_venta<<setw(10)<<aux->valor.cod_pizza<<setw(20)<<aux->valor.categoria<<setw(10)<<aux->valor.unidades<<setw(10)<<aux->valor.fecha_venta<<endl;
+        aux = aux->siguiente;
+    }
+}
+Venta ListaVentas::Cabeza(){
+return cabeza->valor;}
 
 
 

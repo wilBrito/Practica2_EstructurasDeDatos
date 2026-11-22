@@ -51,9 +51,9 @@ class ABBCentros
         // Moverse al nodo raiz:
         void Raiz();
         // Aplicar una función a cada elemento del árbol:
-        void InOrden(void (*func)(Centro&), NodoABBCentro *nodo=NULL, bool r=true);
-        void PreOrden(void (*func)(Centro&), NodoABBCentro *nodo=NULL, bool r=true);
-        void PostOrden(void (*func)(Centro&), NodoABBCentro *nodo=NULL, bool r=true);
+        void InOrden(NodoABBCentro *nodo=NULL, bool r=true);
+        void PreOrden(NodoABBCentro *nodo=NULL, bool r=true);
+        void PostOrden(NodoABBCentro *nodo=NULL, bool r=true);
         //devuelve el id de un centro aleatorio
         int centro_aleatorio();
         //inserta la venta en el centro correspondiente
@@ -62,11 +62,12 @@ class ABBCentros
 
         //Insertamos ventas en los centros del arbol
         void InsertarVentaEnCentro(Venta v);
-
+        NodoABBCentro* getRaiz();
     private:
         // Funciones auxiliares
         void Podar(NodoABBCentro* &);
         void auxContador(NodoABBCentro*);
         void auxAltura(NodoABBCentro*, int);
+        void imprimirNodo(NodoABBCentro*);
 };
 #endif // ABBCENTROS_H

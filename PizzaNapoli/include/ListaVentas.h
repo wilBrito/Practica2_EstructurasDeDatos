@@ -41,8 +41,9 @@ class ListaVentas
         void EsSiguiente();
         bool EsActual();
         Venta ValorActual();
+        Venta Cabeza();
         void RecorrerListaVentas();
-
+        void MostrarVentas();
         int LonguitudListaVentas();
         void InsertarNodoVentaIntermedio(Venta v, int p);
         void InsertarNodoVentaIzq(Venta v);

@@ -9,6 +9,7 @@ struct Venta
     int id_centro;
     string id_venta;
     string cod_pizza;
+    string categoria;
     int unidades;
     string fecha_venta;
 

@@ -17,7 +17,8 @@ class Napoli
         Napoli();
         void generarNcentros();
         void generarNventas();
-
+        void mostrarCentros();
+        void InsertarCentro(Centro);
 };
 
 #endif // NAPOLI_H

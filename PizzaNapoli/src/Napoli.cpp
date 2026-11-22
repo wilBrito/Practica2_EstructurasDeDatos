@@ -1,6 +1,7 @@
 #include "Napoli.h"
 #include "ABBCentros.h"
 #include "Venta.h"
+#include "ListaVentas.h"
 #include<ABBCentros.h>
 #include <ctime>
 #include <stdlib.h>
@@ -22,6 +23,9 @@ while(arbolCentrosDeNapoli.NumeroNodos()<10){
 }}
 void Napoli::generarNventas(){
     int i=0;
+    ListaVentas creadas;
+    bool insertar=false;
+    char entrada;
     while(i<30){
         string cont_string=to_string(cont_ventas);
         while(cont_string.size()<5){
@@ -30,10 +34,11 @@ void Napoli::generarNventas(){
         string id_ventaa="V"+cont_string;
         int elem_pizzas=rand()%8;
         string cod_pizzaa=pizzas[elem_pizzas][0];
+        string categoriaa=pizzas[elem_pizzas][1];
         int unidadesa=rand()%20+1;
         int mesano=rand()%12+1;
         int dia;
-        if(mesano=2){
+        if(mesano==2){
             dia=rand()%29+1;
         }
         else if(mesano == 4 || mesano == 6 || mesano == 9 || mesano == 11){
@@ -54,9 +59,27 @@ void Napoli::generarNventas(){
         int id_centroa=arbolCentrosDeNapoli.centro_aleatorio();
         cont_ventas++;
         cont_ventas=cont_ventas%100000;
-        Venta ventaa={id_centroa,id_ventaa,cod_pizzaa,unidadesa,fecha};
-        arbolCentrosDeNapoli.insertar_venta(ventaa);
+        Venta ventaa={id_centroa,id_ventaa,cod_pizzaa,categoriaa,unidadesa,fecha};
+        creadas.InsertarNodoVenta(ventaa);
         i++;}
+        creadas.MostrarVentas();
+        while(!insertar){
+        cout<<"PRESIONE ENTER PARA INSERTARLAS"<<endl;
+        entrada=cin.get();
+        if(entrada=='\n'){
+            insertar=true;
+        }
+        else{
+        cout<<"ENTER NO PULSADO"<<endl;
+        }}
+        while(!creadas.ListaVentasVacia()){
+            Venta act=creadas.Cabeza();
+            arbolCentrosDeNapoli.insertar_venta(act);
+            creadas.BorrarNodoVenta(act);
+        }
 }
-
+void Napoli::mostrarCentros(){
+arbolCentrosDeNapoli.InOrden(arbolCentrosDeNapoli.getRaiz(),true);}
+void Napoli::InsertarCentro(Centro cent){
+arbolCentrosDeNapoli.Insertar(cent);}
 

@@ -4,7 +4,10 @@
 #include <ListaVentas.h>
 #include <ctime>
 #include <stdlib.h>
+#include <iomanip>
 using namespace std;
+NodoABBCentro* ABBCentros::getRaiz(){
+return raiz;}
 //Árbol vacío
 bool ABBCentros::Vacio(NodoABBCentro *r)
 {
@@ -124,37 +127,40 @@ void ABBCentros::Borrar(const Centro dat)
 // Recorrido de árbol en inorden, aplicamos la función func, que tiene
 // el prototipo:
 // void func(int&);
-void ABBCentros::InOrden(void (*func)(Centro&) , NodoABBCentro *nodo, bool r)
+void ABBCentros::InOrden(NodoABBCentro *nodo, bool r)
 {
   if (raiz==NULL) {cout<<"Arbol vacio"<<endl; return;}
    if(r) nodo = raiz;
-   if(nodo->izquierdo) InOrden(func, nodo->izquierdo, false);
-   func(nodo->dato);
-   if(nodo->derecho) InOrden(func, nodo->derecho, false);
+    if(Vacio(nodo)) return;
+   if(nodo->izquierdo) InOrden(nodo->izquierdo, false);
+   imprimirNodo(nodo);
+   if(nodo->derecho) InOrden(nodo->derecho, false);
 }
 
 // Recorrido de árbol en preorden, aplicamos la función func, que tiene
 // el prototipo:
 // void func(int&);
-void ABBCentros::PreOrden(void (*func)(Centro&), NodoABBCentro *nodo, bool r)
+void ABBCentros::PreOrden(NodoABBCentro *nodo, bool r)
 {
     if (raiz==NULL) {cout<<"Arbol vacio"<<endl; return;}
    if(r) nodo = raiz;
-   func(nodo->dato);
-   if(nodo->izquierdo) PreOrden(func, nodo->izquierdo, false);
-   if(nodo->derecho) PreOrden(func, nodo->derecho, false);
+    if(Vacio(nodo)) return;
+   imprimirNodo(nodo);
+   if(nodo->izquierdo) PreOrden(nodo->izquierdo, false);
+   if(nodo->derecho) PreOrden(nodo->derecho, false);
 }
 
 // Recorrido de árbol en postorden, aplicamos la función func, que tiene
 // el prototipo:
 // void func(int&);
-void ABBCentros::PostOrden(void (*func)(Centro&), NodoABBCentro *nodo, bool r)
+void ABBCentros::PostOrden(NodoABBCentro *nodo, bool r)
 {
       if (raiz==NULL) {cout<<"Arbol vacio"<<endl; return;}
    if(r) nodo = raiz;
-   if(nodo->izquierdo) PostOrden(func, nodo->izquierdo, false);
-   if(nodo->derecho) PostOrden(func, nodo->derecho, false);
-   func(nodo->dato);
+   if(Vacio(nodo)) return;
+   if(nodo->izquierdo) PostOrden(nodo->izquierdo, false);
+   if(nodo->derecho) PostOrden(nodo->derecho, false);
+   imprimirNodo(nodo);
 }
 
 // Buscar un valor en el árbol
@@ -244,11 +250,11 @@ int ABBCentros::centro_aleatorio(){
     actual=raiz;
     while(!Vacio(actual)){
         int mover=rand()%3;
-        if(mover=0){
+        if(mover==0){
             return actual->dato.id_centro;
         }
         //1 ir a los nodos a la izquierda
-        else if(mover=1){
+        else if(mover==1){
             //si esta vacio devolvemos el actual
             if(Vacio(actual->izquierdo)){
                 return actual->dato.id_centro;}
@@ -288,7 +294,8 @@ void ABBCentros::insertar_venta(Venta v){
     if(!encontrado){
         cout<<"Centro no encontrado"<<endl;
     }}
-
+void ABBCentros::imprimirNodo(NodoABBCentro *nodo){
+cout<<left<<setw(10)<<nodo->dato.id_centro<<setw(20)<<"Localidad:"<<setw(20)<<nodo->dato.localidad<<setw(20)<<"num ventas:"<<setw(10)<<nodo->dato.listaDeVentasCentro.LonguitudListaVentas()<<endl;}
 // Función de prueba para recorridos del árbol
 void Mostrar(int &d)
 {
