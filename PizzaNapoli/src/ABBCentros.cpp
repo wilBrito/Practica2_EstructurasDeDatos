@@ -294,8 +294,10 @@ void ABBCentros::insertar_venta(Venta v){
     if(!encontrado){
         cout<<"Centro no encontrado"<<endl;
     }}
+
 void ABBCentros::imprimirNodo(NodoABBCentro *nodo){
-cout<<left<<setw(10)<<nodo->dato.id_centro<<setw(20)<<"Localidad:"<<setw(20)<<nodo->dato.localidad<<setw(20)<<"num ventas:"<<setw(10)<<nodo->dato.listaDeVentasCentro.LonguitudListaVentas()<<endl;}
+cout<<"ID: "<<left<<setw(10)<<nodo->dato.id_centro<<setw(10)<<"Localidad: "<<setw(20)<<nodo->dato.localidad<<setw(10)<<"num ventas: "<<setw(5)<<nodo->dato.listaDeVentasCentro.LonguitudListaVentas()<<endl;}
+
 // Función de prueba para recorridos del árbol
 void Mostrar(int &d)
 {

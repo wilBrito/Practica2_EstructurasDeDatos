@@ -1,15 +1,19 @@
 # depslib dependency file v1.0
-1795128476 source:c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\main.cpp
+1795433769 source:c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\main.cpp
 	<iostream>
+	"ABBCentros.h"
+	"Napoli.h"
 	<stdlib.h>
 	<Napoli.h>
+	<cstdlib>
+	<ctime>
 
-1795128916 c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\include\napoli.h
+1795433769 c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\include\napoli.h
 	<ABBCentros.h>
 	<string>
 	<iostream>
 
-1795126395 c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\include\abbcentros.h
+1795433769 c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\include\abbcentros.h
 	<Centro.h>
 	<iostream>
 
@@ -18,25 +22,38 @@
 	<string>
 	<iostream>
 
-1795124826 c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\include\listaventas.h
+1795433769 c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\include\listaventas.h
 	<Venta.h>
 	<iostream>
 
-1795122663 c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\include\venta.h
+1795433769 c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\include\venta.h
 	<string>
 
-1795126637 source:c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\src\abbcentros.cpp
+1795435053 source:c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\src\abbcentros.cpp
 	"ABBCentros.h"
+	"Venta.h"
 	<Centro.h>
 	<ListaVentas.h>
+	<ctime>
+	<stdlib.h>
+	<iomanip>
 
-1795126731 source:c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\src\listaventas.cpp
+1795433769 source:c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\src\listaventas.cpp
 	"ListaVentas.h"
 	"Venta.h"
 	<stdlib.h>
 	<iostream>
+	<iomanip>
 
-1795129091 source:c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\src\napoli.cpp
+1795433769 source:c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\src\napoli.cpp
 	"Napoli.h"
+	"ABBCentros.h"
+	"Venta.h"
+	"ListaVentas.h"
 	<ABBCentros.h>
+	<ctime>
+	<stdlib.h>
+	<iostream>
+	<string>
+	<Venta.h>
 

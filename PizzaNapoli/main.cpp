@@ -69,7 +69,7 @@ int main()
                 while(!locval){
                 cout<<"inserte la ubicación del nuevo centro (0-20)"<<endl;
                 cin>>loc;
-                if(id<0||id>20){
+                if(loc<0||loc>20){
                     cout<<"id no valido"<<endl;
                 }
                 else{
