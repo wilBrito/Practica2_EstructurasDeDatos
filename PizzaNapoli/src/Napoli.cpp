@@ -91,5 +91,22 @@ bool Napoli::VerificadorDeCentro(int id){
 
 void Napoli::BorrarCentro(int id){
     arbolCentrosDeNapoli.Borrar(arbolCentrosDeNapoli.CentroDeId(id));
+
+}
+
+
+
+//PARA MOSTRAR VENTAS POR CENTRO
+void Napoli::MostrarVentasDeCentro(int id){
+
+    Centro centroBuscado = arbolCentrosDeNapoli.CentroDeId(id);
+
+    if(centroBuscado.listaDeVentasCentro.LonguitudListaVentas() == 0){
+        cout<<"Es una lista vacia"<<endl;
+    }
+    else{
+        cout<<"CENTRO "<<centroBuscado.id_centro<<" - "<<centroBuscado.localidad<<endl;
+        centroBuscado.listaDeVentasCentro.MostrarVentas();
+    }
 }
 

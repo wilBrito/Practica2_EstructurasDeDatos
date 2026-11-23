@@ -22,6 +22,8 @@ class Napoli
 
         bool VerificadorDeCentro(int id);
         void BorrarCentro(int id);
+
+        void MostrarVentasDeCentro(int id);
 };
 
 #endif // NAPOLI_H
