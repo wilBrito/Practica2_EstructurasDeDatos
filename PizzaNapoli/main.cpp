@@ -86,7 +86,15 @@ int main()
                 pizzeriaNapoli.mostrarCentros();//PRUEBA
                 }
                 break;
-            case 2:
+            case 2:{
+                int id = 1000;
+                while(!pizzeriaNapoli.VerificadorDeCentro(id)){
+                    cout<<"Inserte el ID del centro a borrar"<<endl;
+                    cin>>id;
+                }
+                pizzeriaNapoli.BorrarCentro(id);
+                pizzeriaNapoli.mostrarCentros();//PRUEBA
+                }
                 break;
             case 3:
                 break;

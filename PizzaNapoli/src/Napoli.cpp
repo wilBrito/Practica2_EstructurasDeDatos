@@ -83,3 +83,13 @@ arbolCentrosDeNapoli.InOrden(arbolCentrosDeNapoli.getRaiz(),true);}
 void Napoli::InsertarCentro(Centro cent){
 arbolCentrosDeNapoli.Insertar(cent);}
 
+
+//Para BORRAR CENTRO
+bool Napoli::VerificadorDeCentro(int id){
+    return arbolCentrosDeNapoli.BuscarId(id);
+}
+
+void Napoli::BorrarCentro(int id){
+    arbolCentrosDeNapoli.Borrar(arbolCentrosDeNapoli.CentroDeId(id));
+}
+

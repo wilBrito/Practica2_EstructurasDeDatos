@@ -345,3 +345,16 @@ void ABBCentros::InsertarVentaEnCentro(Venta v)
         }
     }
 }
+
+// Devolvemos centro buscado por id, previamente buscado!!!!
+Centro ABBCentros::CentroDeId(int id_centro)
+{
+   actual = raiz;
+   while(!Vacio(actual)) {
+      if(id_centro == actual->dato.id_centro){
+            return actual->dato;
+      }
+      else if(id_centro > actual->dato.id_centro) actual = actual->derecho;
+      else if(id_centro < actual->dato.id_centro) actual = actual->izquierdo;
+   }
+}

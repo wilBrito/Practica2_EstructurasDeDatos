@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1795433769 source:c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\main.cpp
+1795438439 source:c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\main.cpp
 	<iostream>
 	"ABBCentros.h"
 	"Napoli.h"
@@ -8,12 +8,12 @@
 	<cstdlib>
 	<ctime>
 
-1795433769 c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\include\napoli.h
+1795438095 c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\include\napoli.h
 	<ABBCentros.h>
 	<string>
 	<iostream>
 
-1795433769 c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\include\abbcentros.h
+1795437217 c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\include\abbcentros.h
 	<Centro.h>
 	<iostream>
 
@@ -29,7 +29,7 @@
 1795433769 c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\include\venta.h
 	<string>
 
-1795435053 source:c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\src\abbcentros.cpp
+1795437157 source:c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\src\abbcentros.cpp
 	"ABBCentros.h"
 	"Venta.h"
 	<Centro.h>
@@ -45,7 +45,7 @@
 	<iostream>
 	<iomanip>
 
-1795433769 source:c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\src\napoli.cpp
+1795438080 source:c:\users\wilbr\desktop\estructuradedatos\practica2\practica2_estructurasdedatos\pizzanapoli\src\napoli.cpp
 	"Napoli.h"
 	"ABBCentros.h"
 	"Venta.h"

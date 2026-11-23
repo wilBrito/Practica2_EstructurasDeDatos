@@ -62,6 +62,8 @@ class ABBCentros
 
         //Insertamos ventas en los centros del arbol
         void InsertarVentaEnCentro(Venta v);
+        Centro CentroDeId(int id_centro);
+
         NodoABBCentro* getRaiz();
     private:
         // Funciones auxiliares
