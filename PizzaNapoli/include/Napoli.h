@@ -22,7 +22,7 @@ class Napoli
 
         bool VerificadorDeCentro(int id);
         void BorrarCentro(int id);
-
+        void InOrdenIds();
         void MostrarVentasDeCentro(int id);
 };
 

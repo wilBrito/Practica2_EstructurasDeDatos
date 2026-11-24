@@ -88,21 +88,31 @@ int main()
                 break;
             case 2:{
                 int id = 1000;
-                while(!pizzeriaNapoli.VerificadorDeCentro(id)){
-                    cout<<"Inserte el ID del centro a borrar"<<endl;
-                    cin>>id;
-                }
+                cout<<"Centros en el arbol: ";
+                pizzeriaNapoli.InOrdenIds();
+                cout<<endl;
+                cout<<"Inserte el ID del centro a borrar"<<endl;
+                cin>>id;
+                if(id<0||id>999) cout<<"id no valido"<<endl;
+                else if(!pizzeriaNapoli.VerificadorDeCentro(id)) cout<<"Centro no encontrado"<<endl;
+                else{
                 pizzeriaNapoli.BorrarCentro(id);
                 pizzeriaNapoli.mostrarCentros();//PRUEBA
                 }
+                }
                 break;
             case 3:{
-                    int id = 1000;
-                    while(!pizzeriaNapoli.VerificadorDeCentro(id)){
-                    cout<<"Inserte el ID del centro existente"<<endl;
-                    cin>>id;
-                }
+                int id = 1000;
+                cout<<"Centros en el arbol: ";
+                pizzeriaNapoli.InOrdenIds();
+                cout<<endl;
+                cout<<"Inserte el ID del centro a borrar"<<endl;
+                cin>>id;
+                if(id<0||id>999) cout<<"id no valido"<<endl;
+                else if(!pizzeriaNapoli.VerificadorDeCentro(id)) cout<<"Centro no encontrado"<<endl;
+                else{
                 pizzeriaNapoli.MostrarVentasDeCentro(id);
+                }
                 }
                 break;
             case 4:

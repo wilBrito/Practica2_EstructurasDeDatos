@@ -86,7 +86,8 @@ arbolCentrosDeNapoli.Insertar(cent);}
 
 //Para BORRAR CENTRO
 bool Napoli::VerificadorDeCentro(int id){
-    return arbolCentrosDeNapoli.BuscarId(id);
+    bool a=arbolCentrosDeNapoli.BuscarId(id);
+    return a;
 }
 
 void Napoli::BorrarCentro(int id){
@@ -109,4 +110,6 @@ void Napoli::MostrarVentasDeCentro(int id){
         centroBuscado.listaDeVentasCentro.MostrarVentas();
     }
 }
-
+void Napoli::InOrdenIds(){
+        arbolCentrosDeNapoli.InOrdenIds();
+}

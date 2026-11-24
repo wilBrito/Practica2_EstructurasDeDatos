@@ -136,7 +136,14 @@ void ABBCentros::InOrden(NodoABBCentro *nodo, bool r)
    imprimirNodo(nodo);
    if(nodo->derecho) InOrden(nodo->derecho, false);
 }
-
+void ABBCentros::InOrdenIds(NodoABBCentro *nodo, bool r){
+  if (raiz==NULL) {cout<<"Arbol vacio"<<endl; return;}
+   if(r) nodo = raiz;
+    if(Vacio(nodo)) return;
+   if(nodo->izquierdo) InOrdenIds(nodo->izquierdo, false);
+   cout<<nodo->dato.id_centro<<"-";
+   if(nodo->derecho) InOrdenIds(nodo->derecho, false);
+}
 // Recorrido de árbol en preorden, aplicamos la función func, que tiene
 // el prototipo:
 // void func(int&);
