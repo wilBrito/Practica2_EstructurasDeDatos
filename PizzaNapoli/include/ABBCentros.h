@@ -53,12 +53,13 @@ class ABBCentros
         // Aplicar una función a cada elemento del árbol:
         void InOrden(NodoABBCentro *nodo=NULL, bool r=true);
         void InOrdenIds(NodoABBCentro *nodo=NULL, bool r=true);
-        void VentasYPizzasCentro(NodoABBCentro *nodo=NULL, bool r=true);
+        int VentasYPizzasCentro(Centro centro, int pizzas[]);
+        void VentasYPizzasCentro(NodoABBCentro *nodo, bool r,Centro &centro,int pizzas[],bool &primero);
         //devuelve el id de un centro aleatorio
         int centro_aleatorio();
         //inserta la venta en el centro correspondiente
         void insertar_venta(Venta v);
-
+        void CentroMax(Centro centro1,Centro &centro2,bool &primero);
 
         //Insertamos ventas en los centros del arbol
         void InsertarVentaEnCentro(Venta v);

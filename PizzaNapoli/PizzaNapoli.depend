@@ -57,7 +57,7 @@
 	<string>
 	<Venta.h>
 
-1795521056 source:c:\users\chris\onedrive - geocratic sl\escritorio\eedd\practica2_estructurasdedatos\pizzanapoli\main.cpp
+1795702210 source:c:\users\chris\onedrive - geocratic sl\escritorio\eedd\practica2_estructurasdedatos\pizzanapoli\main.cpp
 	<iostream>
 	"ABBCentros.h"
 	"Napoli.h"
@@ -66,23 +66,23 @@
 	<cstdlib>
 	<ctime>
 
-1795520013 c:\users\chris\onedrive - geocratic sl\escritorio\eedd\practica2_estructurasdedatos\pizzanapoli\include\abbcentros.h
+1795709515 c:\users\chris\onedrive - geocratic sl\escritorio\eedd\practica2_estructurasdedatos\pizzanapoli\include\abbcentros.h
 	<Centro.h>
 	<iostream>
 
-1795452923 c:\users\chris\onedrive - geocratic sl\escritorio\eedd\practica2_estructurasdedatos\pizzanapoli\include\centro.h
+1795702210 c:\users\chris\onedrive - geocratic sl\escritorio\eedd\practica2_estructurasdedatos\pizzanapoli\include\centro.h
 	<ListaVentas.h>
 	<string>
 	<iostream>
 
-1795452923 c:\users\chris\onedrive - geocratic sl\escritorio\eedd\practica2_estructurasdedatos\pizzanapoli\include\listaventas.h
+1795708424 c:\users\chris\onedrive - geocratic sl\escritorio\eedd\practica2_estructurasdedatos\pizzanapoli\include\listaventas.h
 	<Venta.h>
 	<iostream>
 
-1795452923 c:\users\chris\onedrive - geocratic sl\escritorio\eedd\practica2_estructurasdedatos\pizzanapoli\include\venta.h
+1795702210 c:\users\chris\onedrive - geocratic sl\escritorio\eedd\practica2_estructurasdedatos\pizzanapoli\include\venta.h
 	<string>
 
-1795520606 c:\users\chris\onedrive - geocratic sl\escritorio\eedd\practica2_estructurasdedatos\pizzanapoli\include\napoli.h
+1795702210 c:\users\chris\onedrive - geocratic sl\escritorio\eedd\practica2_estructurasdedatos\pizzanapoli\include\napoli.h
 	<ABBCentros.h>
 	<string>
 	<iostream>
@@ -96,10 +96,22 @@
 	<stdlib.h>
 	<iomanip>
 
-1795452923 source:c:\users\chris\onedrive - geocratic sl\escritorio\eedd\practica2_estructurasdedatos\pizzanapoli\src\listaventas.cpp
+1795707603 source:c:\users\chris\onedrive - geocratic sl\escritorio\eedd\practica2_estructurasdedatos\pizzanapoli\src\listaventas.cpp
 	"ListaVentas.h"
 	"Venta.h"
 	<stdlib.h>
 	<iostream>
 	<iomanip>
+
+1795708458 source:c:\users\chris\onedrive - geocratic sl\escritorio\eedd\practica2_estructurasdedatos\pizzanapoli\src\napoli.cpp
+	"Napoli.h"
+	"ABBCentros.h"
+	"Venta.h"
+	"ListaVentas.h"
+	<ABBCentros.h>
+	<ctime>
+	<stdlib.h>
+	<iostream>
+	<string>
+	<Venta.h>
 

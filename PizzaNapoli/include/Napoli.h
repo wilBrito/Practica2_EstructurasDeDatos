@@ -15,6 +15,7 @@ class Napoli
     int cont_ventas;
     public:
         Napoli();
+        string Devolpizza(int pos);
         void generarNcentros();
         void generarNventas();
         void mostrarCentros();

@@ -14,6 +14,11 @@ Napoli::Napoli()
 {
     cont_ventas=0;
 }
+string Napoli::Devolpizza(int pos){
+if(pos<8){
+    return pizzas[pos][0];
+}
+}
 void Napoli::generarNcentros(){
 while(arbolCentrosDeNapoli.NumeroNodos()<10){
     int id=rand()%1000;
@@ -114,4 +119,9 @@ void Napoli::InOrdenIds(){
         arbolCentrosDeNapoli.InOrdenIds();
 }
 void Napoli::EstadisticasArbol(){
-arbolCentrosDeNapoli.VentasYPizzasCentro();}
+Centro centro;
+int pizz[8] = {0};
+int pos=arbolCentrosDeNapoli.VentasYPizzasCentro(centro, pizz);
+cout<<"Pizza mas vendida: "<<Devolpizza(pos)<<endl;
+
+}

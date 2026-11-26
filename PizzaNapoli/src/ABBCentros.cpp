@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <iomanip>
 #include <iostream>
+#include "Napoli.h"
 using namespace std;
 NodoABBCentro* ABBCentros::getRaiz(){
 return raiz;}
@@ -86,17 +87,35 @@ void ABBCentros::InOrdenIds(NodoABBCentro *nodo, bool r){
    cout<<nodo->dato.id_centro<<"-";
    if(nodo->derecho) InOrdenIds(nodo->derecho, false);
 }
-void ABBCentros::VentasYPizzasCentro(NodoABBCentro *nodo, bool r){
+void ABBCentros::VentasYPizzasCentro(NodoABBCentro *nodo, bool r,Centro &centroMax,int pizzaas[],bool &primero){
   if (raiz==NULL) {cout<<"Arbol vacio"<<endl; return;}
    if(r) nodo = raiz;
     if(Vacio(nodo)) return;
-   if(nodo->izquierdo) VentasYPizzasCentro(nodo->izquierdo, false);
+   if(nodo->izquierdo){
+        VentasYPizzasCentro(nodo->izquierdo, false,centroMax,pizzaas,primero);}
+   CentroMax(nodo->dato,centroMax,primero);
+   nodo->dato.listaDeVentasCentro.anyadirPizzas(pizzaas);
    cout<<"Centro: "<<to_string(nodo->dato.id_centro)<<endl;
    cout<<"Numero de ventas del centro: "<<to_string(nodo->dato.listaDeVentasCentro.LonguitudListaVentas())<<endl;
    cout<<"Numero de pizzas vendidas del centro: "<<to_string(nodo->dato.listaDeVentasCentro.PizzasVendidas())<<endl;
-   if(nodo->derecho) VentasYPizzasCentro(nodo->derecho, false);
-}
+   if(nodo->derecho){
+        VentasYPizzasCentro(nodo->derecho, false,centroMax,pizzaas,primero);}
+   }
 
+int ABBCentros::VentasYPizzasCentro(Centro centro, int pizzas[]) {
+    bool primero=false;
+    VentasYPizzasCentro(raiz, false, centro, pizzas,primero);
+    cout<<"Centro con mas ventas: "<<to_string(centro.id_centro)<<endl;
+    int a=0;
+    int b=0;
+    while(a<8){
+        if(pizzas[a]>pizzas[b]){
+            b=a;
+        }
+        a++;
+    }
+    return b;
+}
 bool ABBCentros::Buscar(const Centro dat)
 {
    actual = raiz;
@@ -236,20 +255,6 @@ void Mostrar(int &d)
 {
    cout << d << ",";
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 void ABBCentros::InsertarVentaEnCentro(Venta v)
 {
 
@@ -356,3 +361,13 @@ void ABBCentros::Borrar(int idCentro)
 
    cout<<"No exite ese centro"<<endl;
 }
+void ABBCentros::CentroMax(Centro centro1,Centro &centro2,bool &primero){
+    if(primero){
+        centro2=centro1;
+        primero=false;
+    }
+    else if(centro1.listaDeVentasCentro.PizzasVendidas()>centro2.listaDeVentasCentro.PizzasVendidas()){
+        centro2=centro1;
+    }
+}
+

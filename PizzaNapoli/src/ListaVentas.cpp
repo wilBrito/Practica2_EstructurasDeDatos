@@ -183,6 +183,39 @@ int ListaVentas::PizzasVendidas(){
     }
     return pizzas;
 }
+void ListaVentas::anyadirPizzas(int pizzas[]){
+    pnodo aux;
+    aux = cabeza;
+    while(aux)
+    {
+        if(aux->valor.cod_pizza=="NP01"){
+            pizzas[0]+=aux->valor.unidades;
+        }
+         else if(aux->valor.cod_pizza=="NP02"){
+            pizzas[1]+=aux->valor.unidades;
+        }
+        if(aux->valor.cod_pizza=="NP03"){
+            pizzas[2]+=aux->valor.unidades;
+        }
+        if(aux->valor.cod_pizza=="NP04"){
+            pizzas[3]+=aux->valor.unidades;
+        }
+        if(aux->valor.cod_pizza=="NP05"){
+            pizzas[4]+=aux->valor.unidades;
+        }
+        if(aux->valor.cod_pizza=="NP06"){
+            pizzas[5]+=aux->valor.unidades;
+        }
+        if(aux->valor.cod_pizza=="NP07"){
+            pizzas[6]+=aux->valor.unidades;
+        }
+        if(aux->valor.cod_pizza=="NP08"){
+            pizzas[7]+=aux->valor.unidades;
+        }
+        aux = aux->siguiente;
+    }
+}
+
 
 
 
