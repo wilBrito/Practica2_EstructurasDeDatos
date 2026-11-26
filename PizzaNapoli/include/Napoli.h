@@ -19,6 +19,7 @@ class Napoli
         void generarNventas();
         void mostrarCentros();
         void InsertarCentro(Centro);
+        void EstadisticasArbol();
 
         bool VerificadorDeCentro(int id);
         void BorrarCentro(int id);

@@ -120,7 +120,8 @@ int main()
                 break;}
             case 6:
                 break;
-            case 7:
+            case 7:{
+                pizzeriaNapoli.EstadisticasArbol();}
                 break;
             case 8:{
                 cout<<"Generando 30 ventas..."<<endl;

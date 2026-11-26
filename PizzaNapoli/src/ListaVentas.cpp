@@ -172,7 +172,17 @@ void ListaVentas::MostrarVentas(){
 }
 Venta ListaVentas::Cabeza(){
 return cabeza->valor;}
-
+int ListaVentas::PizzasVendidas(){
+    pnodo aux;
+    aux = cabeza;
+    int pizzas=0;
+    while(aux)
+    {
+        pizzas+=aux->valor.unidades;
+        aux = aux->siguiente;
+    }
+    return pizzas;
+}
 
 
 

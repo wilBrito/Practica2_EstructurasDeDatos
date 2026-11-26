@@ -47,6 +47,7 @@ class ListaVentas
         int LonguitudListaVentas();
         void InsertarNodoVentaIntermedio(Venta v, int p);
         void InsertarNodoVentaIzq(Venta v);
+        int PizzasVendidas();
 };
 
 #endif // LISTAVENTAS_H

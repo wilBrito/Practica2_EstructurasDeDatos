@@ -113,3 +113,5 @@ void Napoli::MostrarVentasDeCentro(int id){
 void Napoli::InOrdenIds(){
         arbolCentrosDeNapoli.InOrdenIds();
 }
+void Napoli::EstadisticasArbol(){
+arbolCentrosDeNapoli.VentasYPizzasCentro();}

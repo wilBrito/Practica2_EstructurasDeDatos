@@ -5,6 +5,7 @@
 #include <ctime>
 #include <stdlib.h>
 #include <iomanip>
+#include <iostream>
 using namespace std;
 NodoABBCentro* ABBCentros::getRaiz(){
 return raiz;}
@@ -85,33 +86,17 @@ void ABBCentros::InOrdenIds(NodoABBCentro *nodo, bool r){
    cout<<nodo->dato.id_centro<<"-";
    if(nodo->derecho) InOrdenIds(nodo->derecho, false);
 }
-// Recorrido de árbol en preorden, aplicamos la función func, que tiene
-// el prototipo:
-// void func(int&);
-void ABBCentros::PreOrden(NodoABBCentro *nodo, bool r)
-{
-    if (raiz==NULL) {cout<<"Arbol vacio"<<endl; return;}
+void ABBCentros::VentasYPizzasCentro(NodoABBCentro *nodo, bool r){
+  if (raiz==NULL) {cout<<"Arbol vacio"<<endl; return;}
    if(r) nodo = raiz;
     if(Vacio(nodo)) return;
-   imprimirNodo(nodo);
-   if(nodo->izquierdo) PreOrden(nodo->izquierdo, false);
-   if(nodo->derecho) PreOrden(nodo->derecho, false);
+   if(nodo->izquierdo) VentasYPizzasCentro(nodo->izquierdo, false);
+   cout<<"Centro: "<<to_string(nodo->dato.id_centro)<<endl;
+   cout<<"Numero de ventas del centro: "<<to_string(nodo->dato.listaDeVentasCentro.LonguitudListaVentas())<<endl;
+   cout<<"Numero de pizzas vendidas del centro: "<<to_string(nodo->dato.listaDeVentasCentro.PizzasVendidas())<<endl;
+   if(nodo->derecho) VentasYPizzasCentro(nodo->derecho, false);
 }
 
-// Recorrido de árbol en postorden, aplicamos la función func, que tiene
-// el prototipo:
-// void func(int&);
-void ABBCentros::PostOrden(NodoABBCentro *nodo, bool r)
-{
-      if (raiz==NULL) {cout<<"Arbol vacio"<<endl; return;}
-   if(r) nodo = raiz;
-   if(Vacio(nodo)) return;
-   if(nodo->izquierdo) PostOrden(nodo->izquierdo, false);
-   if(nodo->derecho) PostOrden(nodo->derecho, false);
-   imprimirNodo(nodo);
-}
-
-// Buscar un valor en el árbol
 bool ABBCentros::Buscar(const Centro dat)
 {
    actual = raiz;
