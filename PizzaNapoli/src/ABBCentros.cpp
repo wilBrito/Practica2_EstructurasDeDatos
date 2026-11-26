@@ -64,65 +64,6 @@ void ABBCentros::Insertar(const Centro dat)
    else if(dat.id_centro > padre->dato.id_centro) padre->derecho = new NodoABBCentro(dat);
 }
 
-// Eliminar un elemento de un árbol ABB
-void ABBCentros::Borrar(const Centro dat)
-{
-   NodoABBCentro *padre = NULL;
-   NodoABBCentro *nodo;
-   Centro aux;
-
-   actual = raiz;
-   // Mientras sea posible que el valor esté en el árbol
-   while(!Vacio(actual)) {
-      if(dat.id_centro == actual->dato.id_centro) { // Si el valor está en el nodo actual
-         if(EsHoja(actual)) { // Y si además es un nodo hoja: lo borramos
-            if(padre){ // Si tiene padre (no es el nodo raiz)
-               // Anulamos el puntero que le hace referencia
-               if(padre->derecho == actual) padre->derecho = NULL;
-               else if(padre->izquierdo == actual) padre->izquierdo = NULL;
-            }
-            else raiz=NULL;
-
-            delete actual; // Borrar el nodo
-            actual = NULL;
-            return;
-         }
-         else { // Si el valor está en el nodo actual, pero no es hoja
-            // Buscar nodo
-            padre = actual;
-            // Buscar nodo más izquierdo de rama derecha
-            if(actual->derecho) {
-               nodo = actual->derecho;
-               while(nodo->izquierdo) {
-                  padre = nodo;
-                  nodo = nodo->izquierdo;
-               }
-            }
-            // O buscar nodo más derecho de rama izquierda
-            else {
-               nodo = actual->izquierdo;
-               while(nodo->derecho) {
-                  padre = nodo;
-                  nodo = nodo->derecho;
-               }
-            }
-            // Intercambiar valores de no a borrar u nodo encontrado
-            // y continuar, cerrando el bucle. El nodo encontrado no tiene
-            // por qué ser un nodo hoja, cerrando el bucle nos aseguramos
-            // de que sólo se eliminan nodos hoja.
-            aux = actual->dato;
-            actual->dato = nodo->dato;
-            nodo->dato = aux;
-            actual = nodo;
-         }
-      }
-      else { // Todavía no hemos encontrado el valor, seguir buscándolo
-         padre = actual;
-         if(dat.id_centro > actual->dato.id_centro) actual = actual->derecho;
-         else if(dat.id_centro < actual->dato.id_centro) actual = actual->izquierdo;
-      }
-   }
-}
 
 // Recorrido de árbol en inorden, aplicamos la función func, que tiene
 // el prototipo:
@@ -364,4 +305,69 @@ Centro ABBCentros::CentroDeId(int id_centro)
       else if(id_centro > actual->dato.id_centro) actual = actual->derecho;
       else if(id_centro < actual->dato.id_centro) actual = actual->izquierdo;
    }
+}
+
+
+
+// Eliminar un elemento de un árbol ABB
+void ABBCentros::Borrar(int idCentro)
+{
+   NodoABBCentro *padre = NULL;
+   NodoABBCentro *nodo;
+   Centro aux;
+
+   actual = raiz;
+   // Mientras sea posible que el valor esté en el árbol
+   while(!Vacio(actual)) {
+      if(idCentro == actual->dato.id_centro) { // Si el valor está en el nodo actual
+         if(EsHoja(actual)) { // Y si además es un nodo hoja: lo borramos
+            if(padre){ // Si tiene padre (no es el nodo raiz)
+               // Anulamos el puntero que le hace referencia
+               if(padre->derecho == actual) padre->derecho = NULL;
+               else if(padre->izquierdo == actual) padre->izquierdo = NULL;
+            }
+            else raiz=NULL;
+
+            delete actual; // Borrar el nodo
+            actual = NULL;
+            cout<<"Se borro correctamente"<<endl;
+            return;
+         }
+         else { // Si el valor está en el nodo actual, pero no es hoja
+            // Buscar nodo
+            padre = actual;
+            // Buscar nodo más izquierdo de rama derecha
+            if(actual->derecho) {
+               nodo = actual->derecho;
+               while(nodo->izquierdo) {
+                  padre = nodo;
+                  nodo = nodo->izquierdo;
+               }
+            }
+            // O buscar nodo más derecho de rama izquierda
+            else {
+               nodo = actual->izquierdo;
+               while(nodo->derecho) {
+                  padre = nodo;
+                  nodo = nodo->derecho;
+               }
+            }
+            // Intercambiar valores de no a borrar u nodo encontrado
+            // y continuar, cerrando el bucle. El nodo encontrado no tiene
+            // por qué ser un nodo hoja, cerrando el bucle nos aseguramos
+            // de que sólo se eliminan nodos hoja.
+            aux = actual->dato;
+            actual->dato = nodo->dato;
+            nodo->dato = aux;
+            actual = nodo;
+         }
+      }
+      else { // Todavía no hemos encontrado el valor, seguir buscándolo
+         padre = actual;
+         if(idCentro > actual->dato.id_centro) actual = actual->derecho;
+         else if(idCentro < actual->dato.id_centro) actual = actual->izquierdo;
+      }
+   }
+
+   cout<<"No exite ese centro"<<endl;
 }

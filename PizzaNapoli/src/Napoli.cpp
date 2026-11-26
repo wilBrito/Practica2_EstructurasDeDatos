@@ -91,7 +91,7 @@ bool Napoli::VerificadorDeCentro(int id){
 }
 
 void Napoli::BorrarCentro(int id){
-    arbolCentrosDeNapoli.Borrar(arbolCentrosDeNapoli.CentroDeId(id));
+    arbolCentrosDeNapoli.Borrar(id);
 
 }
 

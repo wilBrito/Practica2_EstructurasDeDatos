@@ -94,7 +94,6 @@ int main()
                 cout<<"Inserte el ID del centro a borrar"<<endl;
                 cin>>id;
                 if(id<0||id>999) cout<<"id no valido"<<endl;
-                else if(!pizzeriaNapoli.VerificadorDeCentro(id)) cout<<"Centro no encontrado"<<endl;
                 else{
                 pizzeriaNapoli.BorrarCentro(id);
                 pizzeriaNapoli.mostrarCentros();//PRUEBA

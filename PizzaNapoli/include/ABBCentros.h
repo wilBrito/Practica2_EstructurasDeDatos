@@ -34,7 +34,7 @@ class ABBCentros
         // Insertar en árbol ordenado:
         void Insertar(const Centro c);
         // Borrar un elemento del árbol:
-        void Borrar(const Centro c);
+        void Borrar(int idCentro);
         // Función de búsqueda:
         bool Buscar(const Centro c);
         // Busca un id
