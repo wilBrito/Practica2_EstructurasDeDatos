@@ -123,7 +123,10 @@ int main()
                 break;
             case 7:
                 break;
-            case 8:
+            case 8:{
+                cout<<"Generando 30 ventas..."<<endl;
+                pizzeriaNapoli.generarNventas();
+                cout<<"Ventas generandas correctamente"<<endl;}
                 break;
             case 0:
                 //salir
